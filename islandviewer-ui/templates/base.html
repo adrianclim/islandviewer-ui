@@ -36,54 +36,15 @@
 </head>
 
 <body>
-	<!--
-	<div class="header">IslandViewer 3 <span class="subheader">| An integrated interface for computational identification and visualization of genomic islands</span></div>
-
-	<div class="navbar navbar-default navbar-static-top navbar-iv" role="navigation">
-	  <div class="container-fluid">
-
-  		<div class="navbar-header">
-    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      			<span class="sr-only">Toggle navigation</span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-    		</button>
-    	</div>
-
-  		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    		<ul class="nav navbar-nav navbar-left">
-    			<li ><a href="{% url 'browse' %}">Browse</a></li>
-    			<li ><a href="{% url 'about' %}">About</a></li>
-    			<li ><a href="{% url 'uploadform' %}">Genome Upload</a></li>
-    			<li ><a href="{% url 'download' %}">Download</a></li>
-    			<li ><a href="{% url 'resources' %}">Resources</a></li>
-    			<li ><a href="{% url 'contactus' %}">Contact Us</a></li>
-    			<li ><a href="{% url 'faq' %}">FAQ</a></li>
-    			<li ><a href="{% url 'acknowledgements' %}">Acknowledgements</a></li>
-    		</ul>
-    		{% if showtour %}
-    		<ul class="nav navbar-nav navbar-right hidden-xs hidden-small">
-    			<li ><a href="javascript:feature_tour();">Take a Tour</a></li>
-			</ul>
-			{% endif %}
-    	</div>
-	  </div>
-	</div>
-	-->
-	
   <div class="container-fluid">
 	<div class="mainbody">
 	 <div class="row">
 	  <div class="equal_height">
-
-		<!--<div class="col-sm-2 sidebar same_height">{% block sidebar %}{% endblock %}&nbsp;</div>-->
-
 		<div class="col-sm-10 content same_height">{% block content %}{% endblock %}</div>
 	  </div>
 	</div>
 	</div>
   </div>
- 
+
 </body>
 </html>

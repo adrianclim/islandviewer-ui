@@ -54,29 +54,43 @@
 <body>
 
     <header>
-        <div id="header-title">
+        <div id="header-title" class="header">
             IslandViewer 3 <span class="subheader">| An integrated interface for computational identification and visualization of genomic islands</span>
         </div>
-        <div id="header-menu">
-            <ul>
-                <li ><a href="{% url 'browse' %}">Browse</a></li>
-                <li ><a href="{% url 'about' %}">About</a></li>
-                <li ><a href="{% url 'uploadform' %}">Genome Upload</a></li>
-                <li ><a href="{% url 'download' %}">Download</a></li>
-                <li ><a href="{% url 'resources' %}">Resources</a></li>
-                <li ><a href="{% url 'contactus' %}">Contact Us</a></li>
-                <li ><a href="{% url 'faq' %}">FAQ</a></li>
-                <li ><a href="{% url 'acknowledgements' %}">Acknowledgements</a></li>
-            </ul>
+        <div id="header-menu" class="navbar navbar-default navbar-static-top navbar-iv" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li ><a href="{% url 'browse' %}">Browse</a></li>
+                    <li ><a href="{% url 'about' %}">About</a></li>
+                    <li ><a href="{% url 'uploadform' %}">Genome Upload</a></li>
+                    <li ><a href="{% url 'download' %}">Download</a></li>
+                    <li ><a href="{% url 'resources' %}">Resources</a></li>
+                    <li ><a href="{% url 'contactus' %}">Contact Us</a></li>
+                    <li ><a href="{% url 'faq' %}">FAQ</a></li>
+                    <li ><a href="{% url 'acknowledgements' %}">Acknowledgements</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
-    <div id="content">
-        <div id="side-bar">
+    <div id="content" class="container-fluid">
+        <div class="row">
+            <div id="side-bar" class="col-sm-2 sidebar same_height">
 
-        </div>
-        <div id="main-content">
+            </div>
+            <div id="main-content" class="col-sm-10 content same_height">
 
+            </div>
         </div>
     </div>
 

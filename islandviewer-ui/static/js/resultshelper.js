@@ -73,8 +73,8 @@ function loadGenomeList(){
                 $("#genomelist").append("<option value=\"" + genomes[i].aid + "\">" + genomes[i].name + " (" + genomes[i].ext_id + ")</option>\n");
             }
 
-            $('#show_second_link').html("Hide dialog");
-            $('#genome_selector_dialog').slideToggle('fast');
+            //$('#show_second_link').html("Hide dialog");
+            //$('#genome_selector_dialog').slideToggle('fast');
             $("#genomelist").trigger("chosen:updated");
 
         },
