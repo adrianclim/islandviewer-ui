@@ -63,6 +63,7 @@ def results(request, aid):
     # Create the context we're going to add
     # our variables for rending to
     context = {}
+    context['container']=request.GET.get('container','circularchart')
     try:
         analysis = Analysis.objects.get(pk=aid)
         context['noanalysis'] = False
@@ -297,7 +298,7 @@ def circularplotjs(request, aid):
     
 #    return render(request, "iv4/circularplot.js", context)
 
-    return render(request, "circularplot.js", context, content_type='text/javascript')
+    return render(request, "new-circularplot.js", context, content_type='text/javascript')
     
 
 def tablejson(request, aid):

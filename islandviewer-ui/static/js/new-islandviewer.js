@@ -1,4 +1,4 @@
-function Islandviewer(aid, ext_id, genomesize, genomename, trackdata, targetcontainer) {
+function Islandviewer(aid, ext_id, genomesize, genomename, trackdata) {
     this.aid = aid;
     this.ext_id = ext_id;
     this.genomesize = genomesize;
@@ -8,8 +8,6 @@ function Islandviewer(aid, ext_id, genomesize, genomename, trackdata, targetcont
 
     this.startBP = 0;
     this.endBP = genomesize;
-
-    this.targetcontainer = targetcontainer;
 }
 
 Islandviewer.prototype.addCircularPlot = function(layout) {
@@ -163,7 +161,7 @@ Islandviewer.prototype.update = function(startBP, endBP, params) {}
 
 //TODO: gene_dialog hardcoded here...
 Islandviewer.prototype.update_finished = function(startBP, endBP, params) {
-    url = '../../json/genes/?aid=' + this.aid + '&ext_id=' + this.ext_id + '&start=' + parseInt(startBP) + '&end=' + parseInt(endBP);
+    url = 'json/genes/?aid=' + this.aid + '&ext_id=' + this.ext_id + '&start=' + parseInt(startBP) + '&end=' + parseInt(endBP);
     self = this;
 
     this.startBP = startBP;

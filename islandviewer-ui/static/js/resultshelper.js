@@ -1,3 +1,5 @@
+var genomeCounter = 1;
+
 function loadStartPage(){
     $("#content #main-content,#content #side-bar").empty();
     $("#content #main-content").load("index");
@@ -6,6 +8,7 @@ function loadStartPage(){
 
 function loadGenome(idNumber){
     var url = "accession/NC11111.1".replace('NC11111.1',idNumber);
+    url+="?container=circularchart"+genomeCounter;
     var contentContainer = $("#content #main-content");
     contentContainer.append("<div class=\"genome\"><\/div>");
     var targetContainer = contentContainer.children().last();
@@ -13,6 +16,7 @@ function loadGenome(idNumber){
 }
 
 function loadAdditionalGenomeFromSearchBar(){
+    genomeCounter = genomeCounter +1;
     var nameindex = $("#genomelist").val();
     var idname = $("#genomelist").children().eq(nameindex).text();
     console.log(nameindex);
@@ -37,25 +41,11 @@ function newResultsPage(){
     $("#content #side-bar").load("sidebar")
 }
 
-/*
-function goto_results() {
-    if(!($("#genomelist").val())) {
-        return;
-    }
-    var url = "accession/NC11111.1".replace('NC11111.1',$("#genomelist").val());
-    $("#content #main-content").empty();
-    $("#content #main-content").load(url);
-
-    $("#content #side-bar").empty();
-    $("#content #side-bar").load("sidebar")
-}
-*/
-
 function loadGenomeList(){
     url = "browse/json/";
 
-    $(".additional_genome").append("<div class=\"genome_selector_dialog\">Select a second genome to display:<br \/>");
-    $(".additional_genome").append("<select id=\"genomelist\" class=\"extraclass\" style=\"width:550px;\" data-placeholder=\"Select a genome...\"><option><\/option>");
+    $(".additional_genome").append("<div class=\"genome_selector_dialog\">Select a genome to display:<br \/>");
+    $(".additional_genome").append("<select id=\"genomelist\" class=\"extraclass \" style=\"width:100%;\" data-placeholder=\"Select a genome...\"><option><\/option>");
     $(".additional_genome").append("<\/select><br \/><span ><a href=\"javascript:loadAdditionalGenomeFromSearchBar();\">Display genome</a></span></div>");
 
     $.ajax({
