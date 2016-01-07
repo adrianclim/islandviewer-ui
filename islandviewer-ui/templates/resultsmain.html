@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Islandviewer 3 - Genomic Island Prediction and Genome Visualization Tool</title>
+
+    <!-- Bootstrap -->
+    <link href="/islandviewer/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/islandviewer/static/css/islandviewer.css" rel="stylesheet">
+    <link href="/islandviewer/static/css/islandplot.css" rel="stylesheet">
+    <link href="/islandviewer/static/css/datatable/DT_bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/islandviewer/static/js/jquery-1.11.2.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/islandviewer/static/js/bootstrap.min.js"></script>
+
+    <!--    <script src="http://d3js.org/d3.v3.min.js"></script>-->
+    <script src="/islandviewer/static/js/d3.min.js"></script>
+    <script src="/islandviewer/static/js/d3-tip.js"></script>
+    <link href="/islandviewer/static/js/chosen/chosen.min.css" rel="stylesheet">
+    <script src="/islandviewer/static/js/chosen/chosen.jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="/islandviewer/static/css/jquery-ui.css" />-->
+    <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />-->
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <!--<script src="/islandviewer/static/js/jquery-ui.min.js"></script>-->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/islandviewer/static/js/intro.js-0.7.1/introjs.css" />
+    <script src="/islandviewer/static/js/intro.js-0.7.1/intro.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-46024702-2', 'sfu.ca');
+        ga('send', 'pageview');
+
+    </script>
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <script src="{{STATIC_URL}}js/resultshelper.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <div id="header-title">
+            IslandViewer 3 <span class="subheader">| An integrated interface for computational identification and visualization of genomic islands</span>
+        </div>
+        <div id="header-menu">
+            <ul>
+                <li ><a href="{% url 'browse' %}">Browse</a></li>
+                <li ><a href="{% url 'about' %}">About</a></li>
+                <li ><a href="{% url 'uploadform' %}">Genome Upload</a></li>
+                <li ><a href="{% url 'download' %}">Download</a></li>
+                <li ><a href="{% url 'resources' %}">Resources</a></li>
+                <li ><a href="{% url 'contactus' %}">Contact Us</a></li>
+                <li ><a href="{% url 'faq' %}">FAQ</a></li>
+                <li ><a href="{% url 'acknowledgements' %}">Acknowledgements</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="content">
+        <div id="side-bar">
+
+        </div>
+        <div id="main-content">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

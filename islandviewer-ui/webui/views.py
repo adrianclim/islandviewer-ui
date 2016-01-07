@@ -25,6 +25,11 @@ from webui.models import VIRULENCE_FACTOR_CATEGORIES
 from .forms import UploadGenomeForm
 from .utils.formatter import *
 
+def test(request):
+    return render(request,'resultsmain.html')
+
+def testsidebar(request):
+    return render(request, 'resultssidebar.html')
 
 def index(request):
     return render(request, 'index.html')

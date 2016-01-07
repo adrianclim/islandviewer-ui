@@ -12,7 +12,7 @@
 
 {% block sidebar %}
 <span class="smalltext">
-Please select a genome from the list. 
+Please select a genome from the list.
 Use the search box to bring matching genomes to the top of the list.
 </span>
 {% endblock %}
@@ -29,7 +29,7 @@ Use the search box to bring matching genomes to the top of the list.
 {% endfor %}
 </select><br /> 
 &nbsp;<br />
-<input id="gotoresults" type="button" value="Go to Genome" onclick="return goto_results()" />&nbsp;&nbsp; <a href="{% url "demo" %}">Example</a>, <a href="{% url "results" '2879' %}">Example (incomplete genome)</a>
+<input id="gotoresults" type="button" value="Go to Genome" onclick="return newResultsPage()" />&nbsp;&nbsp; <a href="{% url "demo" %}">Example</a>, <a href="{% url "results" '2879' %}">Example (incomplete genome)</a>
 <span class="bodyText">
 
 &nbsp;<br />
@@ -60,7 +60,7 @@ Use the search box to bring matching genomes to the top of the list.
 	});
 	
     //$("#genomelist").select2();
-    
+    /*
     function goto_results()
     {
     	if(!($("#genomelist").val())) {
@@ -69,8 +69,8 @@ Use the search box to bring matching genomes to the top of the list.
  
     	var url = "{% url "resultsbyaccnum" 'NC11111.1' %}".replace('NC11111.1', $("#genomelist").val());
     	window.location = url;
-    	
     }
+    */
 </script>
 </div>
 {% endblock content %}

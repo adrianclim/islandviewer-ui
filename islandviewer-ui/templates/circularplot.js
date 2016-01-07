@@ -147,7 +147,7 @@ update_legend();
 var {{ plotName|default:"circular" }}layout = {genomesize: {{ genomesize }}, container: "{{ container }}", h: 500, w: 500, ExtraWidthX: 55, TranslateX: 25, ExtraWidthY: 40, TranslateY: 20, movecursor: true, dblclick: '{{ varName|default:'' }}islandviewerObj' };
 
 var {{ varName|default:"circular" }}containerid =  "{{ container }}".slice(1);
-$('{{ container }}').draggable({ handle: ".move_" +  {{ varName|default:"circular" }}containerid });
+//$('{{ container }}').draggable({ handle: ".move_" +  {{ varName|default:"circular" }}containerid });
 //var {{ plotName|default:"circular" }}Track = new circularTrack({{ plotName|default:"circular" }}layout, {{ plotName|default:"circular" }}data);
 var {{ plotName|default:"circular" }}TrackObj = islandviewerObj.addCircularPlot({{ plotName|default:"circular" }}layout);
 
@@ -163,14 +163,16 @@ var {{ plotName|default:"circular" }}LinearTrack = islandviewerObj.addLinearPlot
 {{ plotName|default:"circular" }}TrackObj.attachBrush(islandviewerObj);
 {{ plotName|default:"circular" }}LinearTrack.addBrushCallback(islandviewerObj);
 
-$('#gene_dialog').dialog( { position: { my: "left top", at: "right top", of: "{{ container }}" },
-	                    height: 550, width: 450,
-			    title: "Genes",
-	                    autoOpen: false,
-          	            close: function() {
-	    $('.circularcontainer').removeClass('outline_plot');
-	}
-	    } );
+
+//TODO fix this
+//$('#gene_dialog').dialog( { position: { my: "left top", at: "right top", of: "{{ container }}" },
+//	                    height: 550, width: 450,
+//			    title: "Genes",
+//	                    autoOpen: false,
+  //        	            close: function() {
+//	    $('.circularcontainer').removeClass('outline_plot');
+//	}
+//	    } );
 
 //$('#genome_selector_dialog').dialog( { position: { my: "center", at: "center", of: window },
 //                                       height: 300, width: 600,
@@ -294,8 +296,6 @@ window.onload = function() {
     }
   }
 
-  $("#second_genome_select").chosen({width: "525px"});
-
   initialize_gene_search();
 
   if('undefined' !== typeof reloadStr) {
@@ -366,12 +366,13 @@ function initialize_gene_search() {
 	},
 	minLength: 3,
 	select: function( event, ui ) {
-	    $('.circularcontainer').removeClass('highlight_plot');
+		lastContainer = $('.circularcontainer:last-child');
+	    lastContainer.removeClass('highlight_plot');
 	    item = ui.item;
 	    var range = (item.end - item.start) * 10;
 	    // Forcus to a window 10x the gene size
 	    if(item.extid == '{{ ext_id }}') {
-		islandviewerObj.focus((item.start - range), (item.end + range), { highlight_sel: '#gene_overlay_' + item.id });
+		islandviewerObj.focus((item.start - range), (item.end + range), { highlight_sel: '.gene_overlay_' + item.id });
 	    } else if(('undefined' !== typeof window.secondislandviewerObj) && item.extid == window.secondislandviewerObj.ext_id) {
 		window.secondislandviewerObj.focus((item.start - range), (item.end + range), { highlight_sel: '#gene_overlay_' + item.id });
 	    }
@@ -604,13 +605,13 @@ function load_second(aidParam, reloadParams) {
     // We can update hte legend here because it only depends on the dataset
     update_legend();
 
-    // Update the tracks if any are turned off
+    // Update the tracks if any are turned offsecondlayout
     updateTracks(window.secondislandviewerObj);
 
     var secondlayout = {genomesize: second_genomesize, container: "#rightplot", h: 500, w: 500, ExtraWidthX: 55, TranslateX: 25, ExtraWidthY: 40, TranslateY: 20, movecursor: true, plotid: 'circularchart', dblclick: 'secondislandviewerObj' };
 //    var secondTrackObj = new circularTrack(secondlayout, seconddata);
     window.secondTrackObj = secondislandviewerObj.addCircularPlot(secondlayout);    
-    $('#rightplot').draggable({ handle: ".move_rightplot" });
+    //$('#rightplot').draggable({ handle: ".move_rightplot" });
 
     var secondLinearlayout = {genomesize: second_genomesize, container: "#secondchartlinear", width: 600, height: 135, bottom_margin:0, plotid: 'circularchartlinear'};
 //    var secondLinearTrack = new genomeTrack(secondLinearlayout, seconddata);
