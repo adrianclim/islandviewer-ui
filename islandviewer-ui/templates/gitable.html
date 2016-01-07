@@ -1,9 +1,9 @@
 {% url 'fetchislands' as fetchislands %}{% url 'fetchislandsfasta' as fetchislandsfasta %}
 {% load static %} 
-<div id="gitable_container" style="white-space: nowrap;">
-  <div id="main_gitable" class="gitable_fullwidth" style="display:inline-block;">
-    <table id="{{ gitablename|default:"maingitable" }}" class="gitable table table-condensed idb-table" style="font-size: 90%; width:100%; white-space: normal;">
-      <thead id="gitableheader">
+<div id="{{container}}_gitable_container" style="white-space: nowrap;">
+  <div id="{{container}}_main_gitable" class="gitable_fullwidth" style="display:inline-block;">
+    <table id="{{container}}_{{ gitablename|default:"maingitable" }}" class="gitable table table-condensed idb-table" style="font-size: 90%; width:100%; white-space: normal;">
+      <thead id="{{container}}_gitableheader">
       <tr>
       <th>Group</th>
       <th>Start</th>
@@ -19,9 +19,9 @@
       </tbody>
     </table>
   </div>
-  <div id="right_gitable" class="hidden" style="max-width: 600px;  vertical-align: top;">
-  <table id="rightgitable" class="gitable table table-condensed idb-table" style="font-size: 90%; width:100%;  white-space: normal;">
-  <thead id="rightgitableheader">
+  <div id="{{container}}_right_gitable" class="hidden" style="max-width: 600px;  vertical-align: top;">
+  <table id="{{container}}_rightgitable" class="gitable table table-condensed idb-table" style="font-size: 90%; width:100%;  white-space: normal;">
+  <thead id="{{container}}_rightgitableheader">
   <tr>
   <th>Group</th>
   <th>Start</th>
@@ -72,7 +72,7 @@ $(window).resize( function () {
 
 $(window).ready(function() {
 	
-	window.oTable = create_gitable("{{ gitablename|default:"maingitable" }}", "{% url 'tablejson' aid=aid %}", 'islandviewerObj');
+	window.oTable = create_gitable("{{container}}_{{ gitablename|default:"maingitable" }}", "{% url 'tablejson' aid=aid %}", 'islandviewerObj');
 	
 	//create_gitable("rightgitable", "{% url 'tablejson' aid=aid %}");
 });
