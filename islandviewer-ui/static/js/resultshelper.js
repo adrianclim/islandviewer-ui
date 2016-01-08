@@ -10,7 +10,7 @@ function loadGenome(idNumber){
     var url = "accession/NC11111.1".replace('NC11111.1',idNumber);
     url+="?container=circularchart"+genomeCounter;
     var contentContainer = $("#content #main-content");
-    contentContainer.append("<div class=\"genome\"><\/div>");
+    contentContainer.append("<div class=\"genome\" style=\"display:inline-block;vertical-align:top;\"><\/div>");
     var targetContainer = contentContainer.children().last();
     targetContainer.load(url);
 }

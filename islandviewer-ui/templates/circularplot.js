@@ -165,20 +165,20 @@ var {{ plotName|default:"circular" }}LinearTrack = islandviewerObj.addLinearPlot
 
 
 //TODO fix this
-//$('#gene_dialog').dialog( { position: { my: "left top", at: "right top", of: "{{ container }}" },
-//	                    height: 550, width: 450,
-//			    title: "Genes",
-//	                    autoOpen: false,
-  //        	            close: function() {
-//	    $('.circularcontainer').removeClass('outline_plot');
-//	}
-//	    } );
+$('#gene_dialog').dialog( { position: { my: "left top", at: "right top", of: "{{ container }}" },
+	                    height: 550, width: 450,
+			    title: "Genes",
+	                    autoOpen: false,
+          	            close: function() {
+	    $('.circularcontainer').removeClass('outline_plot');
+	}
+	    } );
 
-//$('#genome_selector_dialog').dialog( { position: { my: "center", at: "center", of: window },
-//                                       height: 300, width: 600,
-//                                       title: "Select a genome",
-//                                       autoOpen: true
-//                                      } );
+$('#genome_selector_dialog').dialog( { position: { my: "center", at: "center", of: window },
+                                       height: 300, width: 600,
+                                       title: "Select a genome",
+                                       autoOpen: true
+                                      } );
 
 function updateStrand(cb, strand) {
   var track = '';
